@@ -1,0 +1,249 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+@keyframes agrandar{
+    0%{
+        width: 100%;
+        height: 110%;
+    }
+    100%{
+        width: 110%;
+        height: 110%;
+    }
+}
+
+body{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: black;
+}
+
+
+header{
+    font-size: large;
+    display: grid;
+    color: rgb(16, 223, 223);
+    justify-content: center;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul{
+    color: white;
+    border: 3px solid white;
+}
+
+footer{
+    padding: 3em;
+    background-color: black;
+    color: rgb(16, 223, 223);
+    margin-bottom: 0;
+    margin-top: 1.5em;
+}
+
+img:hover{
+    animation-name: agrandar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: nav;
+}
+
+.titulo{
+    grid-area: titulo;
+}
+
+.info{
+    grid-area: info;
+}
+
+.photo{
+    grid-area: photo;
+}
+
+.contenido{
+    grid-area: contenido;
+}
+
+aside{
+    grid-area: sidebar;
+}
+
+footer{
+    grid-area: footer;
+}
+
+
+
+
+
+.envoltura{
+    background-color:black;
+    margin-bottom: 1.5em;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "contenido"
+    "sidebar"
+    "titulo"
+    "info"
+    "photo"
+    "footer"
+}
+
+.titulo, .contenido, aside{
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    color: rgb(16, 223, 223);
+}
+
+.info{
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    color: rgb(16, 223, 223);
+}
+
+.photo{
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    gap: 15em;
+
+}
+img{
+    width: 300px;
+    height: 250px;
+    border: 2em solid rgb(16, 223, 223);
+}
+
+
+@media(min-width:500px){
+    .envoltura{
+        margin: 0;
+        grid-template-areas: 
+        "header    header"
+        "nav       nav"
+        "contenido sidebar"
+        "titulo    titulo"
+        "info      info"
+        "photo     photo"
+        "footer    footer";
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    nav ul{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+    }
+    
+    nav ul, .info{
+        color: rgb(16, 223, 223);
+        border: 3px solid rgb(16, 223, 223);
+    }
+
+    footer{
+        margin-top: 0;
+    }
+
+    img{
+        width: 350px;
+        height: 300px;
+    }
+
+
+}
+
+@media(min-width:768px){
+    .envoltura{
+        margin-bottom: 1.5em;
+        grid-template-areas:
+        "header    header   header"
+        "nav       nav      nav"
+        "contenido sidebar  sidebar"
+        "titulo    titulo   titulo"
+        "info      info     info"
+        "photo     photo    photo"
+        "footer    footer   footer"
+    }
+    nav ul{
+        flex-direction: row;
+        border: 2px solid black;
+        color: white;
+    }
+
+    nav ul, .info{
+        color: rgb(16, 223, 223);
+        border: 3px solid rgb(16, 223, 223);
+    }
+    .photo{
+        background-color:black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10em;
+        margin: 3em;
+    }
+
+    img{
+        border: 5px solid white;
+        width: 300px;
+        height: 200px;
+    }
+
+    footer{
+        margin-top: 1.5em;
+    }
+
+    
+}
+
+@media(min-width:1024px){
+    body{
+        background-color: black;
+    }
+    .envoltura{
+        color: white;
+    }
+    
+    .photo{
+        background-color: black;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        margin: 3em;
+    }
+    
+    img{
+        width: 475px;
+        height: 400px;
+        margin: top 20px;
+    }
+}
+
